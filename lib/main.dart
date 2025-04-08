@@ -10,7 +10,8 @@ class LoginApp extends StatelessWidget {
     return MaterialApp(
       home: LoginPage(),
       debugShowCheckedModeBanner: false,
-      );
+    );
+      
   }
 }
 
@@ -25,8 +26,7 @@ class LoginPage extends StatelessWidget {
           fontSize: 22,
           fontWeight: FontWeight.bold,
 
-
-        )
+        ),
         ),
         backgroundColor: Colors.blue,
         elevation: 4,
@@ -35,32 +35,50 @@ class LoginPage extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+
           children: [
-            TextFormField(
+
+            Image.asset(
+              'lib/assets/unnamed.png',
+                width:350,
+                height:250,
+              ),
+              SizedBox(height:24.0),
+              TextFormField(
               decoration: InputDecoration(labelText: 'Email',
               prefixIcon: Icon(Icons.email),
                 border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
-                )
-                )
+              ) 
               ),
-              SizedBox(height: 16.0),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(labelText: 'Senha',
-                 prefixIcon: Icon(Icons.password),
-                  border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                  ),
+            ),
+            SizedBox(height: 16.0),
+            TextFormField(
+              obscureText: true,
+              decoration: InputDecoration(labelText: 'Senha',
+               prefixIcon: Icon(Icons.password),
+                border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
-              SizedBox(height: 32.0),
-              ElevatedButton(
-                onPressed: () {
-                  // Lógica de autenticação do usuário
-                },
-                child: Text('Login'),
-              ),
+            ),
+            SizedBox(height: 32.0),
+            ElevatedButton(
+              onPressed: () {},
+               style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue, // Cor de fundo do botão
+                foregroundColor: Colors.white, //Cor do texto do botão
+                padding:EdgeInsets.symmetric(horizontal:40, vertical:15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+
+               ),
+               ),
+       
+                // Lógica de autenticação do usuário
+              child: Text('Login'),
+            ),
           ],
         ),
       ),
